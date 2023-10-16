@@ -19,7 +19,7 @@ def step_maximize_web_browser_window(context):
 
 @given('Make request to "{url}"')
 def step_make_request(context, url):
-    context.response = requests.get()
+    context.response = requests.test
 
 @when('Request is 200')
 def step_request_is_200(context):
