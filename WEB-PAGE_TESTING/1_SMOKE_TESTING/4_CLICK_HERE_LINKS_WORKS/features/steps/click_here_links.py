@@ -29,7 +29,7 @@ def step_target_Cypress(context, text):
     except Exception as e:
         assert "Link is not working. Check xPath"
     return
-time.sleep(5)
+
 @then('Target "{TestCafe}" link')
 def step_target_TestCafe(context, text):
     try:
@@ -42,7 +42,7 @@ def step_target_TestCafe(context, text):
     except Exception as e:
         assert "Link is not working. Check xPath"
     return context.driver.quit()
-time.sleep(5)
+
 @then('Target "{API_Automation}" link')
 def step_target_API_Automation(context, text):
     try:
