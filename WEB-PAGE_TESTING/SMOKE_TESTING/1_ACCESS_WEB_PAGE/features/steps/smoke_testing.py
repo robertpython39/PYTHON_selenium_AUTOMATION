@@ -1,11 +1,11 @@
-# FUNCTIONAL TESTS
-import time
-
 # imports
+import time
+import requests
 from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import requests
+
+##### TESTS #####
 
 @given('Open web browser "{url}"')
 def step_open_web_browser(context, url):
