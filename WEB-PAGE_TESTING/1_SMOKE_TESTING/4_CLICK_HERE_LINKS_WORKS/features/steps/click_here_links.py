@@ -17,6 +17,9 @@ def step_open_browser(context, url):
 
     return
 
+@given('A pause of {seconds} seconds')
+def step_seconds(context, seconds):
+    time.sleep(float(seconds))
 @then('Target "{text}" link')
 def step_target_Cypress(context, text):
     try:
