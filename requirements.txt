@@ -1,0 +1,8 @@
+1. python 3.5 or higher
+2. selenium pytest, pytest-html libraries installed with pip
+3. example of running a test and genering a report:
+ - open a command prompt in the root folder where the tests are
+ - type in the cmd: pytest -m html --html=<name of file>.html
+ - press enter
+  -- after pressing enter, the run will begin for the tests inside the .py files and generates a html report for each test that had run.
+  -- you can use -v for verbose after pytest (e.g: pytest -v -m html --html=<name of file>.html) to see a more detailed run of the tests

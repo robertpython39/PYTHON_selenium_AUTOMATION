@@ -1,10 +1,12 @@
 # imports
 import time
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 ##### TESTS #####
 
+@pytest.mark.html
 def test_open_browser():
     try:
         driver = webdriver.Chrome()
@@ -12,8 +14,9 @@ def test_open_browser():
     except Exception as e:
         print("Error code:", e)
 
-time.sleep(5)
 
+
+@pytest.mark.html
 def test_maximize_welcomeScreen():
     try:
         driver = webdriver.Chrome()
@@ -22,11 +25,10 @@ def test_maximize_welcomeScreen():
         driver.maximize_window()
         welcomeXpath = '//h1[@class="display-4" and text()="Welcome!"]'
         driver.find_element(By.XPATH, welcomeXpath)
-        if welcomeXpath:
-            driver.quit()
-
     except Exception as e:
         print("Error code:", e)
+    finally:
+        driver.quit()
 
 
 

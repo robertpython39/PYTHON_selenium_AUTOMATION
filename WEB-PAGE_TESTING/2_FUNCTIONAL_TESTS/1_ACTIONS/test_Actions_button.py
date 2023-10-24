@@ -1,8 +1,10 @@
 # imports
 import time
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+@pytest.mark.html
 def test_click_Actions():
     try:
         driver = webdriver.Chrome()
@@ -11,7 +13,8 @@ def test_click_Actions():
         xpath = '//a[text()="Actions"]'
         driver.find_element(By.XPATH, xpath).click()
         time.sleep(2)
-        driver.quit()
     except Exception as e:
         print("Error code:", e)
+    finally:
+        driver.quit()
 
