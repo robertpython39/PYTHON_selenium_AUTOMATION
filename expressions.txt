@@ -1,0 +1,26 @@
+EXPRESSIONS used in command prompts with PYTEST:
+-k EXPRESSION: Filter tests by name based on substring matching or regular expressions.
+
+-m MARKEXPR: Filter tests by marker expression, selecting tests based on assigned markers.
+
+-s: Disable stdout capture to display output in real-time.
+
+--tb=style: Specify the traceback style for displaying errors and exceptions.
+
+-q, --quiet: Run tests quietly, reducing verbosity in the test output.
+
+-v, --verbose: Increase verbosity, providing more detailed information about test execution.
+
+-x: Stop on the first error, halting the test run on the first encountered failure.
+
+--maxfail=num: Stop after a specified number of test failures.
+
+--durations=num: Display the N slowest test durations.
+
+--junit-xml=path: Generate JUnit-style XML report for exporting test results.
+
+--html=path: Generate an HTML report of test results.
+
+--collect-only: List available tests without running them, useful for inspecting test availability.
+
+--fixtures: List available fixtures in the project.

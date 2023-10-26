@@ -27,13 +27,15 @@ def test_maximize_web_browser_window():
     finally:
         driver.quit()
 
-@pytest.mark.html
+@pytest.mark.api
 def test_make_request():
     try:
         response = requests.get(url="https://qa-automation-practice.netlify.app/")
         assert response.status_code == 200
+        time.sleep(2)
     except Exception as e:
         print("Error code:", e)
+
 
 @pytest.mark.html
 def test_close_browser_window():
