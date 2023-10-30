@@ -10,7 +10,7 @@
   
 4. If you want to run only the markers from the tests you can use the following commands:
  a. Go to the root of the folder where the tests are and run the following command in cmd:
-	<pythin_filename>.py -m "api" --html=result.html
+	<python_filename>.py -m "api" --html=result.html
 	or
  b. If you want to run all the tests from the folders and subfolders with the "api" marker run this command in the root folder:
     <folder_root>*\.py -m "api" --html=result.html
