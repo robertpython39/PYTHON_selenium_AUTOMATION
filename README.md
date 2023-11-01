@@ -8,7 +8,11 @@
 - Automatic Testing: I'm committed to creating reliable and efficient tests that help ensure the quality of web applications.
 - Continuous Learning: I believe in the importance of staying updated with the latest technologies and methodologies in the field of testing.
 - Skill Development: This project serves as a platform to practice, experiment, and enhance my skills in testing and test automation.
+- 
+# Trello Board
 
+- https://trello.com/b/XbM47LHF/automation-practice
+- I manage the project tasks and progress using Trello. You can check the status of the project and view the tasks on the Trello board.
 ## Project Overview
 
 📚 This project is primarily aimed at learning and skill development. It provides an opportunity to gain expertise in a variety of technologies and tools, including:
