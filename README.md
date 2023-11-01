@@ -11,7 +11,7 @@
 - 
 # Trello Board
 
-- [Automation Practice]([https://trello.com/your-trello-board-link](https://trello.com/b/XbM47LHF/automation-practice))
+- https://trello.com/b/XbM47LHF/automation-practice
 - I manage the project tasks and progress using Trello. You can check the status of the project and view the tasks on the Trello board.
 ## Project Overview
 
