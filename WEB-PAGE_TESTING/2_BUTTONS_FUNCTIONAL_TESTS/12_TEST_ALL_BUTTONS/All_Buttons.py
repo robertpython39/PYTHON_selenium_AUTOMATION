@@ -153,6 +153,3 @@ class TestAllButtons():
             sleep(5)
         except Exception as e:
             print(f"Error code:\n {e}")
-
-    def test_close_browser(self):
-        self.driver.quit()
