@@ -1,4 +1,3 @@
-# imports
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -7,59 +6,54 @@ from time import sleep
 @pytest.mark.functional
 class TestClickActionsMenu:
 
-    xpaths=['//a[text()="Actions"]',
-            '//a[contains(@id,"double-click")]',
-            '//a[contains(@id,"scroll")]',
-            '//a[contains(@id,"mouse-hover")]',
-            '//a[contains(@id,"show-hide-element")]'
-            ]
+    xpaths = [
+        '//a[contains(@id,"actions")]',
+        '//a[contains(@id,"double-click")]',
+        '//a[contains(@id,"scroll")]',
+        '//a[contains(@id,"mouse-hover")]',
+        '//a[contains(@id,"show-hide-element")]'
+    ]
 
-
-    def setup_teardown(self):
+    def setup_method(self):
         self.driver = webdriver.Chrome()
-        self.driver.get(url="https://qa-automation-practice.netlify.app/")
+        self.driver.get("https://qa-automation-practice.netlify.app/")
         self.driver.maximize_window()
 
+    def teardown_method(self):
+        self.driver.quit()
 
-
-    def test_double_click_button(self, setup_teardown):
-        try:
-            self.driver.find_element(By.XPATH, self.xpaths[1]).click()
+    def test_Actions_button(self):
+        actions_button = self.driver.find_element(By.XPATH, self.xpaths[0])
+        if actions_button:
+            actions_button.click()
             sleep(5)
-        except Exception as e:
-            print(f"Error code:\n{e}")
+            return actions_button
+        else:
+            return None
 
-    def test_scrolling_button(self, setup_teardown):
-        try:
-            self.driver.find_element(By.XPATH, self.xpaths[2]).click()
-            sleep(5)
-        except Exception as e:
-            print(f"Error code:\n{e}")
+    def test_double_click(self):
+        actions_button = self.test_Actions_button()
+        if actions_button:
+            double_click = self.driver.find_element(By.XPATH, self.xpaths[1]).click()
+            sleep(7)
 
+    def test_scroll_button(self):
+        actions_button = self.test_Actions_button()
+        if actions_button:
+            scroll = self.driver.find_element(By.XPATH, self.xpaths[2]).click()
+            sleep(7)
 
-    def test_mouse_hover_button(self, setup_teardown):
-        try:
-            self.driver.find_element(By.XPATH, self.xpaths[3]).click()
-            sleep(5)
-        except Exception as e:
-            print(f"Error code:\n{e}")
+    def test_hover_button(self):
+        actions_button = self.test_Actions_button()
+        if actions_button:
+            hover = self.driver.find_element(By.XPATH, self.xpaths[3]).click()
+            sleep(7)
 
+    def test_show_hide_button(self):
+        actions_button = self.test_Actions_button()
+        if actions_button:
+            show_hide = self.driver.find_element(By.XPATH, self.xpaths[4]).click()
+            sleep(7)
 
-    def test_show_hide_button(self, setup_teardown):
-        try:
-            self.driver.find_element(By.XPATH, self.xpaths[4]).click()
-            sleep(5)
-        except Exception as e:
-            print(f"Error code:\n{e}")
-
-class Test_Double_click_button():
-    pass
-
-class Test_Scrolling_button():
-    pass
-
-class Test_Mouse_hover_button():
-    pass
-
-class Test_Show_hide_element():
-    pass
+if __name__ == "__main__":
+    pytest.main([__file__])
