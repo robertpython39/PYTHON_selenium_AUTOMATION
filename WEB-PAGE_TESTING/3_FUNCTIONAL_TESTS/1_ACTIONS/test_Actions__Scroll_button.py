@@ -26,7 +26,7 @@ class TestClickActionsMenu:
 
         scroll_button = self.driver.find_element(By.XPATH, self.xpaths[1])
         scroll_button.click()
-        sleep(2)  # Sleep to allow the page to fully load
+        sleep(2)
 
         for position in range (250, 1050, 50):
             self.driver.execute_script(f"window.scrollBy(0, {position});")
